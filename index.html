@@ -1,46 +1,54 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>SISGRA | Software House - Sistema de Gerenciamento Avícola</title>
   <meta name="description" content="Há mais de 30 anos desenvolvendo soluções de software robustas, ágeis e especializadas para a gestão avícola e agronegócio.">
-  
-  <!-- Favicons Oficiais -->
-  <link rel="icon" href="assets/images/favicon-150x150.png" sizes="32x32" type="image/png">
-  <link rel="icon" href="assets/images/favicon-300x300.png" sizes="192x192" type="image/png">
-  <link rel="apple-touch-icon" href="assets/images/favicon-300x300.png">
-  
-  <!-- Open Graph -->
-  <meta property="og:title" content="SISGRA | Software House - Gestão Avícola Inteligente">
-  <meta property="og:description" content="Sistemas especializados para controle de produção, finanças, NF-e e agronegócio com 30 anos de excelência.">
-  <meta property="og:image" content="assets/images/logogrande_1.png">
-  <meta property="og:type" content="website">
 
-  <!-- ==========================================================================
-       ESTILOS SEPARADOS POR SESSÃO
-       ========================================================================== -->
-  <link rel="stylesheet" href="css/global.css">
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Stylesheets Separados por Sessão (Padrão leleo_monteiro_lp) -->
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/elements.css">
+  <link rel="stylesheet" href="css/common.css">
+  <link rel="stylesheet" href="css/menu.css">
   <link rel="stylesheet" href="css/home.css">
   <link rel="stylesheet" href="css/quem-somos.css">
   <link rel="stylesheet" href="css/parceiros.css">
   <link rel="stylesheet" href="css/contato.css">
-</head>
-<body>
+  <link rel="stylesheet" href="css/footer.css">
+  <link rel="stylesheet" href="css/floating-widgets.css">
 
-  <!-- ==========================================================================
-       HEADER FIXO COM GLASSMORPHISM & NAVEGAÇÃO SCROLLSPY
-       ========================================================================== -->
+  <!-- Favicons Oficiais -->
+  <link rel="icon" href="assets/images/favicon-150x150.png" type="image/png">
+  <link rel="icon" href="assets/images/favicon-300x300.png" type="image/png">
+
+  <!-- Scripts & Controllers -->
+  <script src="./controller/floating-widgets.js" defer></script>
+  <script src="./controller/contato.js" defer></script>
+  <script src="./index.js" defer></script>
+</head>
+
+<body>
+  <!-- Header Navigation -->
   <header class="site-header">
-    <div class="container nav-container">
-      <a href="#home" class="brand-logo" aria-label="Sisgra Início">
-        <img src="assets/images/sisgra-2.svg" alt="Sisgra - Sistema de Gerenciamento Avícola">
+    <div class="container navbar-container">
+      <a href="#home" class="brand-link">
+        <img src="assets/images/sisgra-2.svg" alt="Sisgra Logo" class="brand-logo">
+        <div class="brand-text">
+          <span class="brand-name">SISGRA</span>
+          <span class="brand-title">Gestão Avícola Inteligente</span>
+        </div>
       </a>
 
-      <!-- Menu Principal (ScrollSpy Ativo) -->
-      <nav aria-label="Navegação Principal">
-        <ul class="nav-menu">
+      <nav class="desktop-nav">
+        <ul class="nav-list">
           <li><a href="#home" class="nav-link active">Home</a></li>
           <li><a href="#quem-somos" class="nav-link">Quem Somos</a></li>
           <li><a href="#parceiros" class="nav-link">Parceiros</a></li>
@@ -48,66 +56,426 @@
         </ul>
       </nav>
 
-      <!-- Ação Direta no Header -->
       <div class="nav-actions">
-        <a href="#contato" class="btn-header-cta">
+        <button class="btn btn-primary header-cta pulse-cta" onclick="openWhatsapp('Olá Sisgra, vim pelo menu do site e gostaria de falar com a equipe!')">
           <span>Fale Conosco</span>
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-        </a>
-      </div>
+        </button>
 
-      <!-- Botão Menu Mobile -->
-      <button class="menu-toggle" aria-label="Abrir Menu" aria-expanded="false">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
+        <button id="menuToggleBtn" class="menu-toggle-btn" aria-label="Abrir Menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
     </div>
   </header>
 
-  <!-- ==========================================================================
-       AGREGADOR / ROUTER DE SESSÕES
-       (O índice atua apenas como agregador. O conteúdo reside exclusivamente em html/)
-       ========================================================================== -->
-  <main id="router-app">
-    <div data-route="home" data-src="html/home.html"></div>
-    <div data-route="quem-somos" data-src="html/quem-somos.html"></div>
-    <div data-route="parceiros" data-src="html/parceiros.html"></div>
-    <div data-route="contato" data-src="html/contato.html"></div>
-  </main>
-
-  <!-- ==========================================================================
-       FOOTER
-       ========================================================================== -->
-  <footer class="site-footer">
-    <div class="container">
-      <div class="footer-top">
-        <div class="footer-logo">
-          <img src="assets/images/sisgra-2.svg" alt="Sisgra Sistemas">
-        </div>
-        <div>
-          <p>Especialistas em Sistemas para Gerenciamento Avícola desde 1992.</p>
+  <!-- Mobile Drawer & Backdrop -->
+  <div id="drawerBackdrop" class="drawer-backdrop"></div>
+  <aside id="mobileDrawer" class="mobile-drawer">
+    <div>
+      <div class="brand-link" style="margin-bottom: 2rem;">
+        <img src="assets/images/sisgra-2.svg" alt="Sisgra Logo" class="brand-logo">
+        <div class="brand-text">
+          <span class="brand-name">SISGRA</span>
+          <span class="brand-title">Gestão Avícola Inteligente</span>
         </div>
       </div>
+
+      <ul class="mobile-nav-list">
+        <li><a href="#home" class="mobile-nav-link">Início</a></li>
+        <li><a href="#quem-somos" class="mobile-nav-link">Quem Somos</a></li>
+        <li><a href="#parceiros" class="mobile-nav-link">Parceiros</a></li>
+        <li><a href="#contato" class="mobile-nav-link">Fale Conosco</a></li>
+      </ul>
+    </div>
+
+    <div class="mobile-drawer-footer">
+      <button class="btn btn-primary" style="width: 100%;" onclick="openWhatsapp('Olá Sisgra, vim pelo menu mobile do site!')">
+        <span>Falar no WhatsApp</span>
+      </button>
+
+      <div class="mobile-socials">
+        <a href="javascript:void(0)" onclick="openInstagram()" class="mobile-social-icon" title="Instagram">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+        </a>
+        <a href="javascript:void(0)" onclick="openFacebook()" class="mobile-social-icon" title="Facebook">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95C18.05 21.45 22 17.19 22 12z"/></svg>
+        </a>
+        <a href="javascript:void(0)" onclick="openYoutube()" class="mobile-social-icon" title="YouTube">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+        </a>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Main Content -->
+  <main>
+    <!-- Hero Section -->
+    <section id="home" class="hero-section">
+      <div class="hero-backdrop"></div>
+
+      <div class="container hero-grid">
+        <div class="hero-content reveal-fade-up">
+          <div class="hero-badge">
+            <span class="badge-dot"></span>
+            <span>Tecnologia & Gestão Avícola há mais de 30 anos</span>
+          </div>
+
+          <h1 class="hero-title">
+            Descomplicando a <span class="gradient-text">gestão e tecnologia</span> da sua empresa avícola.
+          </h1>
+
+          <p class="hero-subtitle">
+            Software house pioneira no desenvolvimento de sistemas robustos, ágeis e inteligentes para o setor avícola e agronegócio. Da produção ao controle financeiro e fiscal.
+          </p>
+
+          <div class="hero-highlights">
+            <div class="highlight-chip">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <span>Controle de Postura e Lotes</span>
+            </div>
+            <div class="highlight-chip">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <span>Emissão Fiscal & NF-e Integrada</span>
+            </div>
+            <div class="highlight-chip">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <span>Custos e Índices de Ração</span>
+            </div>
+          </div>
+
+          <div class="hero-actions">
+            <button class="btn btn-primary hero-btn pulse-cta" onclick="openWhatsapp('Olá Sisgra, gostaria de conhecer as soluções para minha granja!')">
+              <span>Falar no WhatsApp</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+            </button>
+
+            <a href="#quem-somos" class="btn btn-secondary">
+              <span>Nossa História</span>
+            </a>
+          </div>
+
+          <div class="hero-stats">
+            <div class="stat-item">
+              <span class="stat-number count-up" data-final-value="30" data-prefix="+" data-suffix=" anos">+30 anos</span>
+              <span class="stat-label">De experiência no agro</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-number count-up" data-final-value="100" data-percentage="" data-suffix="%">100%</span>
+              <span class="stat-label">Especializado em avicultura</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-number count-up" data-final-value="2026" data-prefix="" data-suffix="">2026</span>
+              <span class="stat-label">Lançamento Novo ERP Web</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-visual reveal-slide-right">
+          <div class="hero-main-card">
+            <div class="card-header-bar">
+              <div class="window-dots">
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+              <span class="card-status-tag">● Sistema Operacional Ativo</span>
+            </div>
+
+            <div class="card-content-preview">
+              <img src="assets/images/01sombra.jpg" alt="Sisgra - Gestão Avícola Inteligente" loading="lazy">
+            </div>
+
+            <div class="card-floating-badge">
+              <div class="floating-icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+              </div>
+              <div class="floating-text">
+                <strong>Estabilidade & Segurança</strong>
+                <span>Controle total da sua granja</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Quem Somos & Linha do Tempo Histórica -->
+    <section id="quem-somos" class="section section-alt">
+      <div class="container">
+        <div class="section-header reveal-fade-up">
+          <span class="section-tag">Nossa Trajetória</span>
+          <h2 class="section-title">Três décadas transformando a gestão avícola com tecnologia</h2>
+          <p class="section-subtitle">
+            Uma software house nascida da necessidade real do produtor, focada em estabilidade, precisão e evolução constante.
+          </p>
+        </div>
+
+        <div class="about-grid reveal-fade-up">
+          <div class="about-image-wrapper">
+            <div class="about-image-card">
+              <img src="assets/images/Sisgrafestadoovobastos2020-768x1024.jpeg" alt="Sisgra na Festa do Ovo de Bastos" loading="lazy">
+              <div class="about-image-caption">
+                <strong>Festa do Ovo de Bastos</strong> • Tradição, presença constante e compromisso junto aos produtores.
+              </div>
+            </div>
+          </div>
+
+          <div class="about-text-content">
+            <h3>Evolução contínua guiada por quem entende do campo</h3>
+            <p>
+              Nossa história começou com o compromisso de levar tecnologia, estabilidade e controle para a gestão de granjas. Em 1992, com o intuito de informatizar a área contábil, a Granja Tsuru trouxe Luiz Ricardo Ruiz Estevam como contador, que rapidamente percebeu a necessidade de um sistema específico para produção.
+            </p>
+            <p>
+              Assim nasceu a Sisgra: construída ouvindo o dia a dia das operações e transformando rotinas manuais em soluções digitais confiáveis. Hoje somos uma software house consolidada, com novas versões lançadas continuamente para proporcionar máxima agilidade.
+            </p>
+          </div>
+        </div>
+
+        <h3 class="timeline-title reveal-fade-up">A Evolução dos Nossos Softwares</h3>
+
+        <div class="timeline-container reveal-fade-up">
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-card">
+              <span class="timeline-year">1992</span>
+              <h4>POVAV (MS-DOS)</h4>
+              <p>O ponto de partida: controle detalhado da produção de ovos e relatórios semanais de análise para informatizar granjas.</p>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-card">
+              <span class="timeline-year">1993</span>
+              <h4>GB-VENDAS</h4>
+              <p>Criação da primeira solução estruturada para gestão comercial, controle de pedidos e finanças do setor avícola.</p>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-card">
+              <span class="timeline-year">2001 - 2002</span>
+              <h4>GB-CUSTO</h4>
+              <p>Aprofundamento no controle estratégico de custos: conversões, custo de ração e índices de produtividade por lote.</p>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-card">
+              <span class="timeline-year">2009</span>
+              <h4>Sistema SATURNO</h4>
+              <p>Sistema corporativo em rede, ampliando o controle financeiro de ponta a ponta, estoques de matéria-prima e gestão de silos.</p>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-card">
+              <span class="timeline-year">2021 - 2024</span>
+              <h4>Reformulação & Expansão</h4>
+              <p>Reformulação tecnológica completa: sistemas mais leves, integração fiscal (NF-e), aplicativo móvel de vendas e rotina de updates contínuos.</p>
+            </div>
+          </div>
+
+          <div class="timeline-item highlight">
+            <div class="timeline-dot"></div>
+            <div class="timeline-card">
+              <span class="timeline-year">2026</span>
+              <span class="badge-new">Lançamento</span>
+              <h4>Novo ERP Web Sisgra</h4>
+              <p>O futuro da gestão avícola: plataforma 100% em nuvem e moderna, acessível de qualquer dispositivo, com alta performance, dados em tempo real e experiência visual intuitiva para transformar a operação da granja.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Parceiros & Ecossistema -->
+    <section id="parceiros" class="section">
+      <div class="container">
+        <div class="section-header reveal-fade-up">
+          <span class="section-tag">Ecossistema</span>
+          <h2 class="section-title">Parceiros & Clientes em Todo o Brasil</h2>
+          <p class="section-subtitle">
+            Presença consolidada nos principais polos avícolas brasileiros, conectando produtores, cooperativas e especialistas.
+          </p>
+        </div>
+
+        <div class="partners-grid reveal-fade-up">
+          <div class="partner-card">
+            <div class="partner-icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+            </div>
+            <h4 class="partner-name">Granjas e Produtores</h4>
+            <p class="partner-desc">Centenas de granjas avícolas de postura e corte com gestão diária e controle de lotes integrado.</p>
+          </div>
+
+          <div class="partner-card">
+            <div class="partner-icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
+            </div>
+            <h4 class="partner-name">Cooperativas Regionais</h4>
+            <p class="partner-desc">Parcerias estratégicas para padronização de dados, compras coletivas e relatórios consolidados.</p>
+          </div>
+
+          <div class="partner-card">
+            <div class="partner-icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"></line><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
+            </div>
+            <h4 class="partner-name">Consultores Contábeis & Fiscais</h4>
+            <p class="partner-desc">Integração fiscal completa para emissão de NF-e e apuração de crédito de ICMS do produtor rural.</p>
+          </div>
+
+          <div class="partner-card">
+            <div class="partner-icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 14 14"></polyline></svg>
+            </div>
+            <h4 class="partner-name">Distribuição & Logística</h4>
+            <p class="partner-desc">Aplicativos móveis de força de vendas com sincronização em tempo real e agilidade nas rotas.</p>
+          </div>
+        </div>
+
+        <div class="partners-banner reveal-fade-up">
+          <div class="partners-banner-content">
+            <h4>Quer integrar sua empresa ou revenda ao ecossistema Sisgra?</h4>
+            <p>Desenvolvemos conexões personalizadas para cooperativas, consultorias contábeis e distribuidores de insumos.</p>
+          </div>
+          <button class="btn btn-primary" onclick="openWhatsapp('Olá Sisgra, tenho interesse em ser um parceiro comercial!')">
+            <span>Seja um Parceiro</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contato & WhatsApp -->
+    <section id="contato" class="section section-alt">
+      <div class="container">
+        <div class="section-header reveal-fade-up">
+          <span class="section-tag">Canais Oficiais</span>
+          <h2 class="section-title">Vamos conversar sobre a sua gestão?</h2>
+          <p class="section-subtitle">
+            Entre em contato agora, tire dúvidas ou solicite uma demonstração personalizada dos nossos sistemas.
+          </p>
+        </div>
+
+        <div class="contact-grid reveal-fade-up">
+          <div class="contact-info">
+            <div class="contact-card" onclick="openWhatsapp('Olá Sisgra, gostaria de um atendimento via WhatsApp!')" style="cursor: pointer;">
+              <div class="contact-card-icon whatsapp">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.303c-.087.087-.177.182-.076.355.101.173.449.741.964 1.201.662.591 1.221.774 1.394.86.173.086.275.072.376-.044.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.043.073.043.419-.101.824z"/></svg>
+              </div>
+              <div class="contact-card-info">
+                <h4>WhatsApp Comercial</h4>
+                <p>Atendimento rápido e direto com nossos consultores</p>
+                <span class="contact-link">(14) 99685-1290</span>
+              </div>
+            </div>
+
+            <div class="contact-card">
+              <div class="contact-card-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+              </div>
+              <div class="contact-card-info">
+                <h4>Telefone Fixo</h4>
+                <p>Horário comercial de segunda a sexta</p>
+                <a href="tel:1434781444" class="contact-link">(14) 3478-1444</a>
+              </div>
+            </div>
+
+            <div class="contact-social-wrapper">
+              <h4 class="social-links-title">Acompanhe a Sisgra nas Redes</h4>
+              <div class="social-links">
+                <a href="javascript:void(0)" onclick="openInstagram()" class="social-btn" title="Instagram">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                </a>
+                <a href="javascript:void(0)" onclick="openFacebook()" class="social-btn" title="Facebook">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95C18.05 21.45 22 17.19 22 12z"/></svg>
+                </a>
+                <a href="javascript:void(0)" onclick="openYoutube()" class="social-btn" title="YouTube">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                </a>
+                <a href="javascript:void(0)" onclick="openTwitter()" class="social-btn" title="Twitter / X">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/></svg>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="contact-form-container">
+            <h3>Envie uma Mensagem</h3>
+            <p>Preencha os campos abaixo e nosso time entrará em contato prontamente via WhatsApp.</p>
+
+            <form id="contactForm">
+              <div class="form-group">
+                <label for="name" class="form-label">Nome Completo</label>
+                <input type="text" id="name" class="form-input" placeholder="Ex: João da Silva" required>
+              </div>
+
+              <div class="form-group">
+                <label for="email" class="form-label">E-mail Profissional</label>
+                <input type="email" id="email" class="form-input" placeholder="Ex: joao@suagranja.com.br" required>
+              </div>
+
+              <div class="form-group">
+                <label for="subject" class="form-label">Interesse Principal</label>
+                <select id="subject" class="form-select">
+                  <option value="Demonstração de Sistemas">Demonstração dos Sistemas</option>
+                  <option value="Dúvida Comercial / Orçamento">Dúvida Comercial / Orçamento</option>
+                  <option value="Novo ERP Web 2026">Novo ERP Web 2026</option>
+                  <option value="Parceria de Negócios">Parceria de Negócios</option>
+                  <option value="Suporte Técnico">Suporte Técnico</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="message" class="form-label">Mensagem</label>
+                <textarea id="message" class="form-textarea" placeholder="Conte-nos sobre a sua granja ou necessidade..." required></textarea>
+              </div>
+
+              <button type="submit" class="btn btn-primary btn-submit">
+                <span>Enviar pelo WhatsApp</span>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Rodapé Institucional -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <img src="assets/images/sisgra-2.svg" alt="Sisgra Sistemas" class="footer-logo">
+          <p>Especialistas em softwares robustos e tecnologia para gerenciamento avícola desde 1992.</p>
+        </div>
+
+        <div class="footer-links">
+          <a href="#home">Início</a>
+          <a href="#quem-somos">Quem Somos</a>
+          <a href="#parceiros">Parceiros</a>
+          <a href="#contato">Contato</a>
+        </div>
+      </div>
+
       <div class="footer-bottom">
         <p>&copy; 2026 Sisgra - Sistema de Gerenciamento Avícola. Todos os direitos reservados.</p>
       </div>
     </div>
   </footer>
 
-  <!-- ==========================================================================
-       WIDGET FLUTUANTE WHATSAPP (Nativo & Leve)
-       ========================================================================== -->
-  <a href="https://wa.me/5514996851290?text=Ol%C3%A1%2C%20gostaria%20de%20saber%20mais%20sobre%20os%20sistemas%20da%20Sisgra!" 
-     class="whatsapp-float" 
-     target="_blank" 
-     rel="noopener noreferrer" 
-     aria-label="Falar no WhatsApp">
+  <!-- Widgets Flutuantes -->
+  <a class="back-to-top" href="#home" title="Voltar ao Topo">▲</a>
+  <div class="whatsapp-float pulse-cta" onclick="openWhatsapp()" title="Falar no WhatsApp" role="button" aria-label="WhatsApp">
     <span class="whatsapp-tooltip">Fale com a Sisgra!</span>
     <svg viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
-  </a>
-
-  <!-- Script Agregador & Router Modular -->
-  <script src="js/main.js"></script>
+  </div>
 </body>
+
 </html>
