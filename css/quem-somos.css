@@ -1,0 +1,257 @@
+/* ==========================================================================
+   SISGRA - QUEM SOMOS & LINHA DO TEMPO ALTERNADA (css/quem-somos.css)
+   Cores Claras Institucionais com Cards Alternados (Esq / Dir)
+   ========================================================================== */
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 3.5rem;
+  align-items: center;
+  margin-bottom: 5rem;
+}
+
+.about-image-card {
+  background: #FFFFFF;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-card);
+  position: relative;
+}
+
+.about-image-card img {
+  width: 100%;
+  height: 380px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.about-image-card:hover img {
+  transform: scale(1.03);
+}
+
+.about-image-caption {
+  padding: 1rem 1.25rem;
+  background: #F8FAFC;
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  border-top: 1px solid var(--border-subtle);
+}
+
+.about-image-caption strong {
+  color: var(--primary-color);
+}
+
+.about-text-content h3 {
+  margin-bottom: 1.25rem;
+  line-height: 1.25;
+  color: var(--text-pure);
+}
+
+.about-text-content p {
+  margin-bottom: 1.25rem;
+  font-size: 1.05rem;
+  color: var(--text-muted);
+}
+
+/* Timeline com Cards Alternados (Campo Oposto) */
+.timeline-title {
+  text-align: center;
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  margin-bottom: 3.5rem;
+  color: var(--text-pure);
+}
+
+.timeline-container {
+  position: relative;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 20px 0;
+}
+
+/* Linha Central */
+.timeline-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 3px;
+  background: linear-gradient(180deg, var(--primary-color), var(--primary-light), #0088FF);
+}
+
+.timeline-item {
+  position: relative;
+  width: 50%;
+  padding: 16px 36px;
+  margin-bottom: 1.5rem;
+}
+
+.timeline-item:last-child {
+  margin-bottom: 0;
+}
+
+/* Alternância Esquerda / Direita */
+.timeline-item:nth-child(odd) {
+  left: 0;
+}
+
+.timeline-item:nth-child(even) {
+  left: 50%;
+}
+
+/* Marcador Central (Dot) */
+.timeline-dot {
+  position: absolute;
+  top: 28px;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #FFFFFF;
+  border: 4px solid var(--primary-color);
+  box-shadow: 0 0 0 4px var(--primary-glow-soft);
+  z-index: 2;
+  transition: var(--transition-fast);
+}
+
+.timeline-item:nth-child(odd) .timeline-dot {
+  right: -9px;
+  left: auto;
+}
+
+.timeline-item:nth-child(even) .timeline-dot {
+  left: -9px;
+  right: auto;
+}
+
+.timeline-item:hover .timeline-dot {
+  background: var(--primary-color);
+  transform: scale(1.15);
+  box-shadow: 0 0 0 6px var(--primary-glow-soft);
+}
+
+/* Card de Conteúdo */
+.timeline-card {
+  background: #FFFFFF;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: 1.5rem 1.75rem;
+  box-shadow: var(--shadow-card);
+  text-align: left;
+  transition: all var(--transition-base);
+}
+
+.timeline-item:hover .timeline-card {
+  border-color: var(--primary-color);
+  box-shadow: var(--shadow-hover);
+  transform: translateY(-3px);
+}
+
+.timeline-year {
+  display: inline-block;
+  font-family: var(--font-display);
+  font-size: 0.85rem;
+  font-weight: 800;
+  color: var(--primary-color);
+  background: var(--primary-glow-soft);
+  padding: 0.25rem 0.65rem;
+  border-radius: var(--radius-sm);
+  margin-bottom: 0.5rem;
+}
+
+.timeline-card h4 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  color: var(--text-pure);
+}
+
+.timeline-card p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--text-muted);
+}
+
+/* Destaque 2026 ERP Web Sisgra */
+.timeline-item.highlight .timeline-dot {
+  border-color: #0088FF;
+  background: #0088FF;
+  box-shadow: 0 0 0 5px rgba(0, 136, 255, 0.25);
+}
+
+.timeline-item.highlight .timeline-card {
+  background: linear-gradient(135deg, rgba(26, 84, 147, 0.04) 0%, #FFFFFF 100%);
+  border: 1.5px solid #0088FF;
+  box-shadow: 0 8px 25px rgba(0, 136, 255, 0.12);
+  position: relative;
+}
+
+.badge-new {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  background: var(--primary-gradient);
+  color: #FFFFFF;
+  font-family: var(--font-display);
+  font-size: 0.75rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 0.25rem 0.75rem;
+  border-radius: var(--radius-full);
+}
+
+/* Responsividade Alternada */
+@media (max-width: 900px) {
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .about-image-card img {
+    height: 280px;
+  }
+
+  .timeline-container::before {
+    left: 20px;
+  }
+
+  .timeline-item {
+    width: 100%;
+    left: 0 !important;
+    padding-left: 55px;
+    padding-right: 0;
+  }
+
+  .timeline-dot {
+    left: 11px !important;
+    right: auto !important;
+  }
+
+  .timeline-item:nth-child(odd) .timeline-dot {
+    left: 11px !important;
+    right: auto !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .timeline-item {
+    padding-left: 45px;
+  }
+
+  .timeline-container::before {
+    left: 12px;
+  }
+
+  .timeline-dot {
+    left: 3px !important;
+    width: 16px;
+    height: 16px;
+  }
+
+  .timeline-card {
+    padding: 1.25rem 1.15rem;
+  }
+}
