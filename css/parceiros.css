@@ -1,8 +1,72 @@
 /* ==========================================================================
-   SISGRA - PARCEIROS & CLIENTES (css/parceiros.css)
+   SISGRA - PARCEIROS & CARROSSEL DE CLIENTES (css/parceiros.css)
    Cores Claras Institucionais
    ========================================================================== */
 
+/* Carrossel de Logos de Parceiros (Marquee Infinito) */
+.partners-carousel-wrapper {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  margin-bottom: 4rem;
+  padding: 1.5rem 0;
+  mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+}
+
+.partners-carousel-track {
+  display: flex;
+  gap: 1.75rem;
+  width: max-content;
+  animation: scrollPartners 32s linear infinite;
+}
+
+.partners-carousel-track:hover {
+  animation-play-state: paused;
+}
+
+@keyframes scrollPartners {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.partner-logo-item {
+  width: 170px;
+  height: 95px;
+  background: #FFFFFF;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: 1rem 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 10px rgba(15, 23, 42, 0.04);
+  transition: all var(--transition-base);
+  flex-shrink: 0;
+}
+
+.partner-logo-item:hover {
+  transform: translateY(-4px);
+  border-color: var(--primary-color);
+  box-shadow: var(--shadow-hover);
+}
+
+.partner-logo-item img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  transition: transform var(--transition-fast);
+}
+
+.partner-logo-item:hover img {
+  transform: scale(1.06);
+}
+
+/* Grid de Categorias */
 .partners-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -98,5 +162,11 @@
 
   .partners-grid {
     grid-template-columns: 1fr;
+  }
+
+  .partner-logo-item {
+    width: 140px;
+    height: 80px;
+    padding: 0.75rem 1rem;
   }
 }

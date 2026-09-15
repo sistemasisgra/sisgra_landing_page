@@ -139,8 +139,9 @@ function initCounters() {
   const runCounter = (el) => {
     const finalValue = parseInt(el.getAttribute("data-final-value"), 10) || 0;
     const isPercentage = el.hasAttribute("data-percentage");
+    const noSeparator = el.hasAttribute("data-no-separator");
     const prefix = el.getAttribute("data-prefix") || "";
-    const suffix = el.getAttribute("data-suffix") || "";
+    const suffix = el.getAttribute("data-suffix") || (isPercentage ? "%" : "");
     const duration = 2000;
     const startTime = performance.now();
 
@@ -151,21 +152,15 @@ function initCounters() {
       // Quartic curve
       const easeProgress = 1 - Math.pow(1 - progress, 4);
       const currentValue = Math.floor(easeProgress * finalValue);
+      const formattedVal = noSeparator ? currentValue : currentValue.toLocaleString('pt-BR');
 
-      if (isPercentage) {
-        el.textContent = `${prefix}${currentValue}%${suffix}`;
-      } else {
-        el.textContent = `${prefix}${currentValue.toLocaleString('pt-BR')}${suffix}`;
-      }
+      el.textContent = `${prefix}${formattedVal}${suffix}`;
 
       if (progress < 1) {
         requestAnimationFrame(updateCounter);
       } else {
-        if (isPercentage) {
-          el.textContent = `${prefix}${finalValue}%${suffix}`;
-        } else {
-          el.textContent = `${prefix}${finalValue.toLocaleString('pt-BR')}${suffix}`;
-        }
+        const finalFormatted = noSeparator ? finalValue : finalValue.toLocaleString('pt-BR');
+        el.textContent = `${prefix}${finalFormatted}${suffix}`;
       }
     };
 

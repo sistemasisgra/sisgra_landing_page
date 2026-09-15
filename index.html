@@ -4,14 +4,17 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
+
   <title>SISGRA | Software House - Sistema de Gerenciamento Avícola</title>
-  <meta name="description" content="Há mais de 30 anos desenvolvendo soluções de software robustas, ágeis e especializadas para a gestão avícola e agronegócio.">
+  <meta name="description"
+    content="Há mais de 30 anos desenvolvendo soluções de software robustas, ágeis e especializadas para a gestão avícola e agronegócio.">
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
 
   <!-- Stylesheets Separados por Sessão (Padrão leleo_monteiro_lp) -->
   <link rel="stylesheet" href="css/variables.css">
@@ -39,12 +42,8 @@
   <!-- Header Navigation -->
   <header class="site-header">
     <div class="container navbar-container">
-      <a href="#home" class="brand-link">
-        <img src="assets/images/sisgra-2.svg" alt="Sisgra Logo" class="brand-logo">
-        <div class="brand-text">
-          <span class="brand-name">SISGRA</span>
-          <span class="brand-title">Gestão Avícola Inteligente</span>
-        </div>
+      <a href="#home" class="brand-link" aria-label="Sisgra Início">
+        <img src="assets/images/sisgra-2.svg" alt="Sisgra Sistemas" class="brand-logo">
       </a>
 
       <nav class="desktop-nav">
@@ -57,7 +56,8 @@
       </nav>
 
       <div class="nav-actions">
-        <button class="btn btn-primary header-cta pulse-cta" onclick="openWhatsapp('Olá Sisgra, vim pelo menu do site e gostaria de falar com a equipe!')">
+        <button class="btn btn-primary header-cta pulse-cta"
+          onclick="openWhatsapp('Olá Sisgra, vim pelo menu do site e gostaria de falar com a equipe!')">
           <span>Fale Conosco</span>
         </button>
 
@@ -75,11 +75,7 @@
   <aside id="mobileDrawer" class="mobile-drawer">
     <div>
       <div class="brand-link" style="margin-bottom: 2rem;">
-        <img src="assets/images/sisgra-2.svg" alt="Sisgra Logo" class="brand-logo">
-        <div class="brand-text">
-          <span class="brand-name">SISGRA</span>
-          <span class="brand-title">Gestão Avícola Inteligente</span>
-        </div>
+        <img src="assets/images/sisgra-2.svg" alt="Sisgra Sistemas" class="brand-logo">
       </div>
 
       <ul class="mobile-nav-list">
@@ -91,19 +87,31 @@
     </div>
 
     <div class="mobile-drawer-footer">
-      <button class="btn btn-primary" style="width: 100%;" onclick="openWhatsapp('Olá Sisgra, vim pelo menu mobile do site!')">
+      <button class="btn btn-primary" style="width: 100%;"
+        onclick="openWhatsapp('Olá Sisgra, vim pelo menu mobile do site!')">
         <span>Falar no WhatsApp</span>
       </button>
 
       <div class="mobile-socials">
         <a href="javascript:void(0)" onclick="openInstagram()" class="mobile-social-icon" title="Instagram">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+          </svg>
         </a>
         <a href="javascript:void(0)" onclick="openFacebook()" class="mobile-social-icon" title="Facebook">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95C18.05 21.45 22 17.19 22 12z"/></svg>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+            <path
+              d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95C18.05 21.45 22 17.19 22 12z" />
+          </svg>
         </a>
         <a href="javascript:void(0)" onclick="openYoutube()" class="mobile-social-icon" title="YouTube">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+            <path
+              d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+          </svg>
         </a>
       </div>
     </div>
@@ -127,28 +135,46 @@
           </h1>
 
           <p class="hero-subtitle">
-            Software house pioneira no desenvolvimento de sistemas robustos, ágeis e inteligentes para o setor avícola e agronegócio. Da produção ao controle financeiro e fiscal.
+            Software house pioneira no desenvolvimento de sistemas robustos, ágeis e inteligentes para o setor avícola e
+            agronegócio. Da produção ao controle financeiro e fiscal.
           </p>
 
           <div class="hero-highlights">
             <div class="highlight-chip">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
               <span>Controle de Postura e Lotes</span>
             </div>
             <div class="highlight-chip">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
               <span>Emissão Fiscal & NF-e Integrada</span>
             </div>
             <div class="highlight-chip">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
               <span>Custos e Índices de Ração</span>
+            </div>
+            <div class="highlight-chip">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+              </svg>
+              <span>Estabilidade & Segurança</span>
             </div>
           </div>
 
           <div class="hero-actions">
-            <button class="btn btn-primary hero-btn pulse-cta" onclick="openWhatsapp('Olá Sisgra, gostaria de conhecer as soluções para minha granja!')">
+            <button class="btn btn-primary hero-btn pulse-cta"
+              onclick="openWhatsapp('Olá Sisgra, gostaria de conhecer as soluções para minha granja!')">
               <span>Falar no WhatsApp</span>
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                stroke-linecap="round" stroke-linejoin="round">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
             </button>
 
             <a href="#quem-somos" class="btn btn-secondary">
@@ -158,16 +184,17 @@
 
           <div class="hero-stats">
             <div class="stat-item">
-              <span class="stat-number count-up" data-final-value="30" data-prefix="+" data-suffix=" anos">+30 anos</span>
+              <span class="stat-number count-up" data-final-value="30" data-prefix="+" data-suffix=" anos">+30
+                anos</span>
               <span class="stat-label">De experiência no agro</span>
             </div>
             <div class="stat-item">
-              <span class="stat-number count-up" data-final-value="100" data-percentage="" data-suffix="%">100%</span>
+              <span class="stat-number count-up" data-final-value="100" data-suffix="%">100%</span>
               <span class="stat-label">Especializado em avicultura</span>
             </div>
             <div class="stat-item">
-              <span class="stat-number count-up" data-final-value="2026" data-prefix="" data-suffix="">2026</span>
-              <span class="stat-label">Lançamento Novo ERP Web</span>
+              <span class="stat-number count-up" data-final-value="100" data-prefix="+">+100</span>
+              <span class="stat-label">Granjas e clientes atendidos</span>
             </div>
           </div>
         </div>
@@ -184,17 +211,7 @@
             </div>
 
             <div class="card-content-preview">
-              <img src="assets/images/01sombra.jpg" alt="Sisgra - Gestão Avícola Inteligente" loading="lazy">
-            </div>
-
-            <div class="card-floating-badge">
-              <div class="floating-icon">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
-              </div>
-              <div class="floating-text">
-                <strong>Estabilidade & Segurança</strong>
-                <span>Controle total da sua granja</span>
-              </div>
+              <img src="assets/system.jpg" alt="Sisgra - Sistema de Gestão Avícola" loading="lazy">
             </div>
           </div>
         </div>
@@ -208,16 +225,19 @@
           <span class="section-tag">Nossa Trajetória</span>
           <h2 class="section-title">Três décadas transformando a gestão avícola com tecnologia</h2>
           <p class="section-subtitle">
-            Uma software house nascida da necessidade real do produtor, focada em estabilidade, precisão e evolução constante.
+            Uma software house nascida da necessidade real do produtor, focada em estabilidade, precisão e evolução
+            constante.
           </p>
         </div>
 
         <div class="about-grid reveal-fade-up">
           <div class="about-image-wrapper">
             <div class="about-image-card">
-              <img src="assets/images/Sisgrafestadoovobastos2020-768x1024.jpeg" alt="Sisgra na Festa do Ovo de Bastos" loading="lazy">
+              <img src="assets/images/Sisgrafestadoovobastos2020-768x1024.jpeg" alt="Sisgra na Festa do Ovo de Bastos"
+                loading="lazy">
               <div class="about-image-caption">
-                <strong>Festa do Ovo de Bastos</strong> • Tradição, presença constante e compromisso junto aos produtores.
+                <strong>Festa do Ovo de Bastos</strong> • Tradição, presença constante e compromisso junto aos
+                produtores.
               </div>
             </div>
           </div>
@@ -225,10 +245,14 @@
           <div class="about-text-content">
             <h3>Evolução contínua guiada por quem entende do campo</h3>
             <p>
-              Nossa história começou com o compromisso de levar tecnologia, estabilidade e controle para a gestão de granjas. Em 1992, com o intuito de informatizar a área contábil, a Granja Tsuru trouxe Luiz Ricardo Ruiz Estevam como contador, que rapidamente percebeu a necessidade de um sistema específico para produção.
+              Nossa história começou com o compromisso de levar tecnologia, estabilidade e controle para a gestão de
+              granjas. Em 1992, com o intuito de informatizar a área contábil, a Granja Tsuru trouxe Luiz Ricardo Ruiz
+              Estevam como contador, que rapidamente percebeu a necessidade de um sistema específico para produção.
             </p>
             <p>
-              Assim nasceu a Sisgra: construída ouvindo o dia a dia das operações e transformando rotinas manuais em soluções digitais confiáveis. Hoje somos uma software house consolidada, com novas versões lançadas continuamente para proporcionar máxima agilidade.
+              Assim nasceu a Sisgra: construída ouvindo o dia a dia das operações e transformando rotinas manuais em
+              soluções digitais confiáveis. Hoje somos uma software house consolidada, com novas versões lançadas
+              continuamente para proporcionar máxima agilidade.
             </p>
           </div>
         </div>
@@ -241,7 +265,8 @@
             <div class="timeline-card">
               <span class="timeline-year">1992</span>
               <h4>POVAV (MS-DOS)</h4>
-              <p>O ponto de partida: controle detalhado da produção de ovos e relatórios semanais de análise para informatizar granjas.</p>
+              <p>O ponto de partida: controle detalhado da produção de ovos e relatórios semanais de análise para
+                informatizar granjas.</p>
             </div>
           </div>
 
@@ -250,7 +275,8 @@
             <div class="timeline-card">
               <span class="timeline-year">1993</span>
               <h4>GB-VENDAS</h4>
-              <p>Criação da primeira solução estruturada para gestão comercial, controle de pedidos e finanças do setor avícola.</p>
+              <p>Criação da primeira solução estruturada para gestão comercial, controle de pedidos e finanças do setor
+                avícola.</p>
             </div>
           </div>
 
@@ -259,7 +285,8 @@
             <div class="timeline-card">
               <span class="timeline-year">2001 - 2002</span>
               <h4>GB-CUSTO</h4>
-              <p>Aprofundamento no controle estratégico de custos: conversões, custo de ração e índices de produtividade por lote.</p>
+              <p>Aprofundamento no controle estratégico de custos: conversões, custo de ração e índices de produtividade
+                por lote.</p>
             </div>
           </div>
 
@@ -268,7 +295,8 @@
             <div class="timeline-card">
               <span class="timeline-year">2009</span>
               <h4>Sistema SATURNO</h4>
-              <p>Sistema corporativo em rede, ampliando o controle financeiro de ponta a ponta, estoques de matéria-prima e gestão de silos.</p>
+              <p>Sistema corporativo em rede, ampliando o controle financeiro de ponta a ponta, estoques de
+                matéria-prima e gestão de silos.</p>
             </div>
           </div>
 
@@ -277,7 +305,8 @@
             <div class="timeline-card">
               <span class="timeline-year">2021 - 2024</span>
               <h4>Reformulação & Expansão</h4>
-              <p>Reformulação tecnológica completa: sistemas mais leves, integração fiscal (NF-e), aplicativo móvel de vendas e rotina de updates contínuos.</p>
+              <p>Reformulação tecnológica completa: sistemas mais leves, integração fiscal (NF-e), aplicativo móvel de
+                vendas e rotina de updates contínuos.</p>
             </div>
           </div>
 
@@ -287,7 +316,9 @@
               <span class="timeline-year">2026</span>
               <span class="badge-new">Lançamento</span>
               <h4>Novo ERP Web Sisgra</h4>
-              <p>O futuro da gestão avícola: plataforma 100% em nuvem e moderna, acessível de qualquer dispositivo, com alta performance, dados em tempo real e experiência visual intuitiva para transformar a operação da granja.</p>
+              <p>O futuro da gestão avícola: plataforma 100% em nuvem e moderna, acessível de qualquer dispositivo, com
+                alta performance, dados em tempo real e experiência visual intuitiva para transformar a operação da
+                granja.</p>
             </div>
           </div>
         </div>
@@ -301,50 +332,141 @@
           <span class="section-tag">Ecossistema</span>
           <h2 class="section-title">Parceiros & Clientes em Todo o Brasil</h2>
           <p class="section-subtitle">
-            Presença consolidada nos principais polos avícolas brasileiros, conectando produtores, cooperativas e especialistas.
+            Presença consolidada nos principais polos avícolas brasileiros, conectando produtores, cooperativas e
+            especialistas.
           </p>
+        </div>
+
+        <!-- Carrossel de Logos de Parceiros -->
+        <div class="partners-carousel-wrapper reveal-fade-up">
+          <div class="partners-carousel-track">
+            <div class="partner-logo-item"><img src="assets/images/partners/tsuru.png" alt="Granja Tsuru"
+                loading="lazy"></div>
+            <div class="partner-logo-item"><img src="assets/images/partners/acampamento.png" alt="Ovos Acampamento"
+                loading="lazy"></div>
+            <div class="partner-logo-item"><img src="assets/images/partners/amano.png" alt="Granja Amano"
+                loading="lazy"></div>
+            <div class="partner-logo-item"><img src="assets/images/partners/dovalle.png" alt="Granja Do Valle"
+                loading="lazy"></div>
+            <div class="partner-logo-item"><img src="assets/images/partners/gemacaipira.png" alt="Gema Caipira"
+                loading="lazy"></div>
+            <div class="partner-logo-item"><img src="assets/images/partners/jatai.png" alt="Ovos Jataí" loading="lazy">
+            </div>
+            <div class="partner-logo-item"><img src="assets/images/partners/logocanaa.png" alt="Ovos Canaã"
+                loading="lazy"></div>
+            <div class="partner-logo-item"><img src="assets/images/partners/logofriolar.png" alt="Friolar"
+                loading="lazy"></div>
+            <div class="partner-logo-item"><img src="assets/images/partners/mariass.png" alt="Ovos Maria SS"
+                loading="lazy"></div>
+            <div class="partner-logo-item"><img src="assets/images/partners/serradourada.png" alt="Serra Dourada"
+                loading="lazy"></div>
+            <div class="partner-logo-item"><img src="assets/images/partners/soft.png" alt="Soft" loading="lazy"></div>
+            <div class="partner-logo-item"><img src="assets/images/partners/uemura.png" alt="Granja Uemura"
+                loading="lazy"></div>
+            <div class="partner-logo-item"><img src="assets/images/partners/gohara.png" alt="Granja Gohara"
+                loading="lazy"></div>
+            <div class="partner-logo-item"><img src="assets/images/partners/lobo.png" alt="Granja Lobo" loading="lazy">
+            </div>
+            <div class="partner-logo-item"><img src="assets/images/partners/shiro.png" alt="Granja Shiro"
+                loading="lazy"></div>
+
+            <!-- Duplicação para loop infinito -->
+            <div class="partner-logo-item"><img src="assets/images/partners/tsuru.png" alt="Granja Tsuru"
+                loading="lazy"></div>
+            <div class="partner-logo-item"><img src="assets/images/partners/acampamento.png" alt="Ovos Acampamento"
+                loading="lazy"></div>
+            <div class="partner-logo-item"><img src="assets/images/partners/amano.png" alt="Granja Amano"
+                loading="lazy"></div>
+            <div class="partner-logo-item"><img src="assets/images/partners/dovalle.png" alt="Granja Do Valle"
+                loading="lazy"></div>
+            <div class="partner-logo-item"><img src="assets/images/partners/gemacaipira.png" alt="Gema Caipira"
+                loading="lazy"></div>
+            <div class="partner-logo-item"><img src="assets/images/partners/jatai.png" alt="Ovos Jataí" loading="lazy">
+            </div>
+            <div class="partner-logo-item"><img src="assets/images/partners/logocanaa.png" alt="Ovos Canaã"
+                loading="lazy"></div>
+            <div class="partner-logo-item"><img src="assets/images/partners/logofriolar.png" alt="Friolar"
+                loading="lazy"></div>
+            <div class="partner-logo-item"><img src="assets/images/partners/mariass.png" alt="Ovos Maria SS"
+                loading="lazy"></div>
+            <div class="partner-logo-item"><img src="assets/images/partners/serradourada.png" alt="Serra Dourada"
+                loading="lazy"></div>
+            <div class="partner-logo-item"><img src="assets/images/partners/soft.png" alt="Soft" loading="lazy"></div>
+            <div class="partner-logo-item"><img src="assets/images/partners/uemura.png" alt="Granja Uemura"
+                loading="lazy"></div>
+            <div class="partner-logo-item"><img src="assets/images/partners/gohara.png" alt="Granja Gohara"
+                loading="lazy"></div>
+            <div class="partner-logo-item"><img src="assets/images/partners/lobo.png" alt="Granja Lobo" loading="lazy">
+            </div>
+            <div class="partner-logo-item"><img src="assets/images/partners/shiro.png" alt="Granja Shiro"
+                loading="lazy"></div>
+          </div>
         </div>
 
         <div class="partners-grid reveal-fade-up">
           <div class="partner-card">
             <div class="partner-icon">
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                <circle cx="9" cy="7" r="4"></circle>
+                <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+              </svg>
             </div>
             <h4 class="partner-name">Granjas e Produtores</h4>
-            <p class="partner-desc">Centenas de granjas avícolas de postura e corte com gestão diária e controle de lotes integrado.</p>
+            <p class="partner-desc">Centenas de granjas avícolas de postura e corte com gestão diária e controle de
+              lotes integrado.</p>
           </div>
 
           <div class="partner-card">
             <div class="partner-icon">
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+                <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+              </svg>
             </div>
             <h4 class="partner-name">Cooperativas Regionais</h4>
-            <p class="partner-desc">Parcerias estratégicas para padronização de dados, compras coletivas e relatórios consolidados.</p>
+            <p class="partner-desc">Parcerias estratégicas para padronização de dados, compras coletivas e relatórios
+              consolidados.</p>
           </div>
 
           <div class="partner-card">
             <div class="partner-icon">
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"></line><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <line x1="12" y1="1" x2="12" y2="23"></line>
+                <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+              </svg>
             </div>
             <h4 class="partner-name">Consultores Contábeis & Fiscais</h4>
-            <p class="partner-desc">Integração fiscal completa para emissão de NF-e e apuração de crédito de ICMS do produtor rural.</p>
+            <p class="partner-desc">Integração fiscal completa para emissão de NF-e e apuração de crédito de ICMS do
+              produtor rural.</p>
           </div>
 
           <div class="partner-card">
             <div class="partner-icon">
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 14 14"></polyline></svg>
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"></circle>
+                <polyline points="12 6 12 12 14 14"></polyline>
+              </svg>
             </div>
             <h4 class="partner-name">Distribuição & Logística</h4>
-            <p class="partner-desc">Aplicativos móveis de força de vendas com sincronização em tempo real e agilidade nas rotas.</p>
+            <p class="partner-desc">Aplicativos móveis de força de vendas com sincronização em tempo real e agilidade
+              nas rotas.</p>
           </div>
         </div>
 
         <div class="partners-banner reveal-fade-up">
           <div class="partners-banner-content">
             <h4>Quer integrar sua empresa ou revenda ao ecossistema Sisgra?</h4>
-            <p>Desenvolvemos conexões personalizadas para cooperativas, consultorias contábeis e distribuidores de insumos.</p>
+            <p>Desenvolvemos conexões personalizadas para cooperativas, consultorias contábeis e distribuidores de
+              insumos.</p>
           </div>
-          <button class="btn btn-primary" onclick="openWhatsapp('Olá Sisgra, tenho interesse em ser um parceiro comercial!')">
+          <button class="btn btn-primary"
+            onclick="openWhatsapp('Olá Sisgra, tenho interesse em ser um parceiro comercial!')">
             <span>Seja um Parceiro</span>
           </button>
         </div>
@@ -364,9 +486,13 @@
 
         <div class="contact-grid reveal-fade-up">
           <div class="contact-info">
-            <div class="contact-card" onclick="openWhatsapp('Olá Sisgra, gostaria de um atendimento via WhatsApp!')" style="cursor: pointer;">
+            <div class="contact-card" onclick="openWhatsapp('Olá Sisgra, gostaria de um atendimento via WhatsApp!')"
+              style="cursor: pointer;">
               <div class="contact-card-icon whatsapp">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.303c-.087.087-.177.182-.076.355.101.173.449.741.964 1.201.662.591 1.221.774 1.394.86.173.086.275.072.376-.044.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.043.073.043.419-.101.824z"/></svg>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.303c-.087.087-.177.182-.076.355.101.173.449.741.964 1.201.662.591 1.221.774 1.394.86.173.086.275.072.376-.044.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.043.073.043.419-.101.824z" />
+                </svg>
               </div>
               <div class="contact-card-info">
                 <h4>WhatsApp Comercial</h4>
@@ -377,7 +503,11 @@
 
             <div class="contact-card">
               <div class="contact-card-icon">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path
+                    d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
+                  </path>
+                </svg>
               </div>
               <div class="contact-card-info">
                 <h4>Telefone Fixo</h4>
@@ -390,16 +520,30 @@
               <h4 class="social-links-title">Acompanhe a Sisgra nas Redes</h4>
               <div class="social-links">
                 <a href="javascript:void(0)" onclick="openInstagram()" class="social-btn" title="Instagram">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                  </svg>
                 </a>
                 <a href="javascript:void(0)" onclick="openFacebook()" class="social-btn" title="Facebook">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95C18.05 21.45 22 17.19 22 12z"/></svg>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                    <path
+                      d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95C18.05 21.45 22 17.19 22 12z" />
+                  </svg>
                 </a>
                 <a href="javascript:void(0)" onclick="openYoutube()" class="social-btn" title="YouTube">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                    <path
+                      d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+                  </svg>
                 </a>
                 <a href="javascript:void(0)" onclick="openTwitter()" class="social-btn" title="Twitter / X">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/></svg>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                    <path
+                      d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z" />
+                  </svg>
                 </a>
               </div>
             </div>
@@ -433,12 +577,17 @@
 
               <div class="form-group">
                 <label for="message" class="form-label">Mensagem</label>
-                <textarea id="message" class="form-textarea" placeholder="Conte-nos sobre a sua granja ou necessidade..." required></textarea>
+                <textarea id="message" class="form-textarea"
+                  placeholder="Conte-nos sobre a sua granja ou necessidade..." required></textarea>
               </div>
 
               <button type="submit" class="btn btn-primary btn-submit">
                 <span>Enviar pelo WhatsApp</span>
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="22" y1="2" x2="11" y2="13"></line>
+                  <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                </svg>
               </button>
             </form>
           </div>
@@ -454,6 +603,46 @@
         <div class="footer-brand">
           <img src="assets/images/sisgra-2.svg" alt="Sisgra Sistemas" class="footer-logo">
           <p>Especialistas em softwares robustos e tecnologia para gerenciamento avícola desde 1992.</p>
+
+          <div class="footer-socials">
+            <a href="https://www.instagram.com/sisgra/" target="_blank" rel="noopener noreferrer"
+              class="footer-social-btn" title="Instagram">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+              </svg>
+            </a>
+            <a href="https://www.facebook.com/SisgraAvicultura" target="_blank" rel="noopener noreferrer"
+              class="footer-social-btn" title="Facebook">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95C18.05 21.45 22 17.19 22 12z" />
+              </svg>
+            </a>
+            <a href="https://www.youtube.com/channel/UC3rzWiqxX7A8O26vVP5CwmQ" target="_blank" rel="noopener noreferrer"
+              class="footer-social-btn" title="YouTube">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+              </svg>
+            </a>
+            <a href="https://twitter.com/SisgraSistemas" target="_blank" rel="noopener noreferrer"
+              class="footer-social-btn" title="Twitter / X">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z" />
+              </svg>
+            </a>
+            <a href="https://wa.me/5514996851290" target="_blank" rel="noopener noreferrer"
+              class="footer-social-btn whatsapp" title="WhatsApp Oficial">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.303c-.087.087-.177.182-.076.355.101.173.449.741.964 1.201.662.591 1.221.774 1.394.86.173.086.275.072.376-.044.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.043.073.043.419-.101.824z" />
+              </svg>
+            </a>
+          </div>
         </div>
 
         <div class="footer-links">
@@ -472,9 +661,13 @@
 
   <!-- Widgets Flutuantes -->
   <a class="back-to-top" href="#home" title="Voltar ao Topo">▲</a>
-  <div class="whatsapp-float pulse-cta" onclick="openWhatsapp()" title="Falar no WhatsApp" role="button" aria-label="WhatsApp">
+  <div class="whatsapp-float pulse-cta" onclick="openWhatsapp()" title="Falar no WhatsApp" role="button"
+    aria-label="WhatsApp">
     <span class="whatsapp-tooltip">Fale com a Sisgra!</span>
-    <svg viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+    <svg viewBox="0 0 24 24">
+      <path
+        d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z" />
+    </svg>
   </div>
 </body>
 

@@ -1,6 +1,6 @@
 /* ==========================================================================
    SISGRA - RODAPÉ (css/footer.css)
-   Cores Claras Institucionais
+   Cores Claras Institucionais com Redes Sociais Integradas
    ========================================================================== */
 
 .site-footer {
@@ -12,19 +12,19 @@
 .footer-content {
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  gap: 2rem;
+  align-items: flex-start;
+  gap: 2.5rem;
   padding-bottom: 3rem;
   border-bottom: 1px solid var(--border-subtle);
   margin-bottom: 2rem;
 }
 
 .footer-brand {
-  max-width: 420px;
+  max-width: 440px;
 }
 
 .footer-logo {
-  height: 46px;
+  height: 42px;
   width: auto;
   margin-bottom: 1rem;
 }
@@ -33,6 +33,39 @@
   font-size: 0.92rem;
   color: var(--text-muted);
   line-height: 1.6;
+  margin-bottom: 1.25rem;
+}
+
+/* Redes Sociais no Footer */
+.footer-socials {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+.footer-social-btn {
+  width: 38px;
+  height: 38px;
+  border-radius: var(--radius-sm);
+  background: #F1F5F9;
+  border: 1px solid var(--border-subtle);
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--transition-fast);
+}
+
+.footer-social-btn:hover {
+  background: var(--primary-color);
+  border-color: var(--primary-color);
+  color: #FFFFFF;
+  transform: translateY(-2px);
+}
+
+.footer-social-btn.whatsapp:hover {
+  background: var(--color-whatsapp);
+  border-color: var(--color-whatsapp);
 }
 
 .footer-links {
@@ -64,7 +97,12 @@
 @media (max-width: 768px) {
   .footer-content {
     flex-direction: column;
+    align-items: center;
     text-align: center;
+  }
+
+  .footer-socials {
+    justify-content: center;
   }
 
   .footer-links {
