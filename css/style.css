@@ -1,0 +1,10 @@
+/* ==========================================================================
+   SISGRA - SOFTWARE HOUSE MODERNA
+   Índice Central de Estilos (Agregador Modular dos CSS de cada Sessão)
+   ========================================================================== */
+
+@import url('global.css');
+@import url('home.css');
+@import url('quem-somos.css');
+@import url('parceiros.css');
+@import url('contato.css');
