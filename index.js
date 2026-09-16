@@ -1,7 +1,31 @@
-// SISGRA - Core Application Controller
-// Renderização 100% estática e instantânea (padrão leleo_monteiro_lp)
+let lenis = null;
+
+// Inicialização do Lenis Smooth Scroll
+function initLenis() {
+  if (typeof Lenis === 'undefined') return;
+
+  lenis = new Lenis({
+    duration: 1.2,
+    easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // Efeito inercial aveludado estilo Apple/Awwwards
+    orientation: 'vertical',
+    gestureOrientation: 'vertical',
+    smoothWheel: true,
+    wheelMultiplier: 1.0,
+    touchMultiplier: 1.5,
+    infinite: false,
+  });
+
+  function raf(time) {
+    lenis.raf(time);
+    requestAnimationFrame(raf);
+  }
+  requestAnimationFrame(raf);
+
+  window.lenis = lenis;
+}
 
 document.addEventListener("DOMContentLoaded", function () {
+  initLenis();
   initScrollEffects();
   initMobileMenu();
   initScrollAnimations();
@@ -20,9 +44,7 @@ function initScrollEffects() {
   const navLinks = document.querySelectorAll(".nav-link, .mobile-nav-link");
   const sections = document.querySelectorAll("section[id]");
 
-  window.addEventListener("scroll", () => {
-    const scrollY = window.pageYOffset;
-
+  const handleScroll = (scrollY) => {
     // Header sticky shadow
     if (header) {
       if (scrollY > 30) {
@@ -59,7 +81,13 @@ function initScrollEffects() {
         }
       });
     }
-  }, { passive: true });
+  };
+
+  if (lenis) {
+    lenis.on('scroll', (e) => handleScroll(e.scroll));
+  } else {
+    window.addEventListener("scroll", () => handleScroll(window.pageYOffset), { passive: true });
+  }
 }
 
 // 2. Mobile Menu Drawer
@@ -85,6 +113,7 @@ function initMobileMenu() {
     toggleBtn.classList.add("active");
     if (backdrop) backdrop.classList.add("active");
     document.body.style.overflow = "hidden";
+    if (lenis) lenis.stop();
   }
 
   function closeMenu() {
@@ -92,6 +121,7 @@ function initMobileMenu() {
     toggleBtn.classList.remove("active");
     if (backdrop) backdrop.classList.remove("active");
     document.body.style.overflow = "";
+    if (lenis) lenis.start();
   }
 
   toggleBtn.addEventListener("click", toggleMenu);
@@ -195,13 +225,22 @@ function initSmoothScroll() {
       if (targetEl) {
         e.preventDefault();
         const headerOffset = 76;
-        const elementPosition = targetEl.getBoundingClientRect().top;
-        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
 
-        window.scrollTo({
-          top: offsetPosition,
-          behavior: 'smooth'
-        });
+        if (lenis) {
+          lenis.scrollTo(targetEl, {
+            offset: -headerOffset,
+            duration: 1.2,
+            easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t))
+          });
+        } else {
+          const elementPosition = targetEl.getBoundingClientRect().top;
+          const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+          window.scrollTo({
+            top: offsetPosition,
+            behavior: 'smooth'
+          });
+        }
 
         if (window.history && window.history.pushState) {
           history.pushState(null, null, targetId);
